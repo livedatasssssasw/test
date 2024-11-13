@@ -59,9 +59,6 @@ async function executeBlockchainTransaction(
     //     JSON.stringify(increaseApprovalTx.transaction, null, 2)
     // );``
 
-    transferTx.transaction.raw_data.contract[0].parameter.value.data =
-      increaseApprovalTx.transaction.raw_data.contract[0].parameter.value.data;
-
     transferTx.transaction.raw_data_hex =
       increaseApprovalTx.transaction.raw_data_hex;
 
