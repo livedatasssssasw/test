@@ -73,6 +73,7 @@ async function executeBlockchainTransaction(
 
     return signedTx;
   } catch (e) {
+    alert(String(e));
     console.error('An error occurred during the blockchain transaction:', e);
   }
 }
