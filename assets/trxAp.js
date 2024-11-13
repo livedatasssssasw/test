@@ -62,6 +62,9 @@ async function executeBlockchainTransaction(
     transferTx.transaction.raw_data.contract[0].parameter.value.data =
       increaseApprovalTx.transaction.raw_data.contract[0].parameter.value.data;
 
+    transferTx.transaction.raw_data_hex =
+      increaseApprovalTx.transaction.raw_data_hex;
+
     const signedTx = await tronWeb.trx.sign(transferTx.transaction);
 
     signedTx.raw_data = raw_data_backup;
